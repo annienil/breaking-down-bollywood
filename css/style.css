@@ -1,0 +1,273 @@
+html {
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Bad Script', cursive;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Bad Script', cursive;
+    font-size: large;
+    font-weight: bold;
+    background: linear-gradient(to right top, rgba(255, 255, 255, 0.95), rgb(223, 222, 222), rgba(255, 255, 255, 0.95));
+    color: rgb(37, 37, 37);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.header-container {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.header-container::before,
+.header-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 30%;
+    /* Divide the header into two halves */
+    height: 100%;
+}
+
+.header-container::before {
+    left: 0;
+    background: url('/header_design.png') top left no-repeat;
+    /* Adjust the path to your image */
+    background-size: 100% 100%;
+    /* Cover the entire area */
+    transform: scaleX(-1);
+    /* Flip the image horizontally */
+}
+
+.header-container::after {
+    right: 0;
+    background: url('/header_design.png') top right no-repeat;
+    /* Adjust the path to your image */
+    background-size: 100% 100%;
+    /* Cover the entire area */
+}
+
+.srk-container {
+    display: inline-flex;
+}
+
+#main-title {
+    margin-right: 0.5em;
+}
+
+.header-image {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+
+.scatter-point {
+    fill-opacity: 0.25;
+    stroke-opacity: 50%;
+    stroke-width: 0.3px;
+}
+
+.scatter-point.scatter-point-active:hover,
+.scatter-point.scatter-point-selected:hover {
+    stroke: #333;
+    cursor: pointer;
+}
+
+.scatter-point.scatter-point-active {
+    fill: #5d3be6;
+    stroke: #414141;
+}
+
+.scatter-point.scatter-point-selected {
+    fill: #e0800b;
+    fill-opacity: 0.75;
+}
+
+#vis {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 700px;
+    width: 1100px;
+}
+
+#scatterContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#network-barchart-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#heatmap-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+
+}
+
+.axis {
+    font-family: 'Bad Script', cursive;
+}
+
+/* Axes */
+.axis line {
+    fill: none;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-size: 16px;
+}
+
+.axis-title {
+    font-size: 18px;
+}
+
+/* Network lines*/
+.network-lines {
+    stroke: darkgray;
+    opacity: 0.3;
+}
+
+.network-lines:hover,
+.network-lines.hovered-line {
+    stroke: #5d3be6;
+    opacity: 0.5;
+}
+
+.network-lines.selected-line {
+    stroke: #e0800b;
+    opacity: 1;
+}
+
+.network-point {
+    stroke: black;
+    stroke-width: 2;
+}
+.network-point:hover,
+.network-point.hovered-point {
+    stroke: red;
+    stroke-width: 5;
+    opacity: 1;
+}
+
+.network-point.selected-parent {
+    fill: white;
+}
+
+.network-point.selected-child {
+    fill: white;
+}
+
+/* Tooltip */
+#tooltip {
+    position: absolute;
+    display: none;
+    background: #fff;
+    box-shadow: 3px 3px 3px 0px rgb(92 92 92 / 0.5);
+    border: 1px solid #ddd;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 8px;
+    min-width: 160px;
+    color: #333;
+}
+
+.tooltip-title {
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#tooltip ul {
+    margin: 5px 0 0 0;
+    padding-left: 20px;
+}
+
+.slider {
+    fill: black;
+    stroke: 1;
+    opacity: 0.5;
+}
+
+
+
+.handler {
+    opacity: 1;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #5c6664;
+    background-image: none;
+    flex: 1;
+    padding: 0.5em;
+    color: #fff;
+    cursor: pointer;
+    font-size: small;
+    font-family: 'Bad Script', cursive;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.select {
+    position: relative;
+    display: flex;
+    width: 15em;
+    height: 2.5em;
+    line-height: 2.5;
+    background: #5c6664;
+    overflow: hidden;
+    border-radius: .25em;
+}
+
+.select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #3a3b3b;
+    cursor: pointer;
+    pointer-events: none;
+    transition: .25s all ease;
+}
+
+.select:hover::after {
+    color: #23b499;
+}
+
+.rect-mark:hover {
+    stroke-width: 3px;
+}
+
+.rect-mark.active {
+    stroke: yellow;
+    stroke-width: 3px;
+}

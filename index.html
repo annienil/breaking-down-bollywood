@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>D3 Project Starter Template</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="header-container">
+        <div class="srk-container">
+        <h1 id="main-title">Breaking Down Bollywood</h1>
+        <img src="srk_header.png" alt="SRK Header" class="header-image">
+    </div>
+    </div>
+    <div class="container">
+        <div id="vis">
+            <div id="network-barchart-container">
+                <div id="network"></div>
+                <div id="barchart"></div>
+            </div>
+            <div id="scatterContainer">
+                <div class="select">
+                    <select id="filterDropdown">
+                        <option value="" disabled selected>Filter by Award Wins+Nominations</option>
+                        <option value="-1">No filter</option>
+                        <option value="1-10">1-10</option>
+                        <option value="11-20">11-20</option>
+                        <option value="21-50">21-50</option>
+                        <option value="51-100">51-100</option>
+                        <option value="101-300">101-300</option>
+                        <option value="300+">300+</option>
+                    </select>
+                </div>
+                <div id="scatterplot"></div>
+            </div>
+            <div id="heatmap-container">
+                <div id="heatmap"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="tooltip"></div>
+
+    <!-- D3 bundle -->
+    <script src="js/d3.v6.min.js"></script>
+    <script src="js/d3-annotation.min.js"></script>
+    <script src="https://unpkg.com/d3-simple-slider"></script>
+
+    <!-- Our JS code -->
+    <script src="js/main.js"></script>
+    <script src="js/barChart.js"></script>
+    <script src="js/scatterplot.js"></script>
+    <script src="js/heatmap.js"></script>
+    <script src="js/network.js"></script>
+</body>
+
+</html>
